@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+
+  <html>
+    <head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        {% load staticfiles %}
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="{% static 'css/background.css' %}" media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+      <title>Modificar Usuarios</title>
+    </head>
+
+
+    <body>
+        <nav class="nav-extended hoverable #283593 indigo darken-3">
+            <div class="nav-wrapper">
+                <!-- Dropdown Structure -->
+              <ul id="dropdown1" class="dropdown-content">
+                <li><a href="#!">Log de actividad</a></li>
+                <li><a href="#!">Ayuda</a></li>
+                <li class="divider"></li>
+                <li><a onClick="location.href='/salir/'">Cerrar Sesion</a></li>
+              </ul>
+              <a href="#" class="brand-logo center"><img class="responsive-img" src="{% static 'images/logo-01.png' %}" width="90"></a>
+              <a href="#" data-activates="mobile-demo" class="button-collapse large"><i class="material-icons">menu</i></a>
+              <ul id="" class="right hide-on-med-and-down">
+
+                <li><a href="#">Nuevos usuarios</a></li>
+                <li><a href="#">Incentivos</a></li>
+                <li><a href="#"><i class="material-icons">notifications</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Administrador<i class="material-icons right">arrow_drop_down</i></a></li>
+              </ul>
+              <ul class="side-nav" id="mobile-demo">
+                <li><a href="sass.html"><i class="material-icons">lightbulb_outline</i>Retos</a></li>
+                <li><a href="badges.html"><i class="material-icons">group</i>Nuevos usuarios</a></li>
+                <li><a href="collapsible.html"><i class="material-icons">face</i>Incentivos</a></li>
+                <li class="divider"></li>
+                <li><a href="collapsible.html"><i class="material-icons">notifications</i>Notificaciones</a></li>
+                <li><a href="#!"><i class="material-icons">visibility</i>Log de actividad</a></li>
+                <li><a href="#!"><i class="material-icons">help</i>Ayuda</a></li>
+                
+                <li><a href="#!"><i class="material-icons">close</i>Cerrar Sesion</a></li>
+                
+              </ul>
+              
+            </div>
+            <div class="nav-content">
+             <ul class="tabs tabs-transparent">
+                <li class="tab"><a onClick="location.href='/account/inicio'">Inicio</a></li>
+                <li class="tab"><a onClick="location.href='/account/areas'">Areas</a></li>
+                <li class="tab"><a class="active" onClick="location.href='/account/usuarios'">Usuarios</a></li>
+                <li class="tab"><a onClick="location.href='/account/retos'">Retos</a></li>
+                <li class="tab"><a onClick="location.href='/account/estadisticas'">Estadisticas</a></li>
+              </ul>
+            </div>
+        </nav>
+
+
+
+        <!-- ACA VA EL CONTENIDO DE EL TAB 3 -->
+
+          <div id="test3" class="col s12">
+              <div class="row">
+                  <div id="test-swipe-1" class="col s12 m10 l6 offset-l3 offset-m1  #eeeeee grey lighten-3  hoverable center">
+                    <div class="#eeeeee grey lighten-3 hoverable">
+                        <br>
+                        <h5><b>DATOS DE CONTACTO</b></h5>
+                        <br>
+                    </div>
+
+                    <hr><br><br>
+          {% block content %}
+		    <form method="post">{% csrf_token %}
+                <div class="row">
+        	      	<div class="col s12">
+        		      <div class="row">
+        		        <div class="input-field col s6">
+        		          <input id="first_name" type="text" class="validate" name="nombres" value="{{ object.nombres }}">
+        		          <label for="first_name">Nombre del Representante</label>
+        		        </div>
+        		        <div class="input-field col s6">
+        		          <input id="edad" type="number" class="validate" name="edad" value="{{ object.edad }}">
+        		          <label for="edad">Edad</label>
+        		        </div>
+        		      </div>
+        		      <div class="row">
+        		        <div class="input-field col s6">
+        		          <input id="profesion" type="text" class="validate"  name="profesion" value="{{ object.profesion }}">
+        		          <label for="profesion">Profesion</label>
+        		        </div>
+        		        <div class="input-field col s6">
+        		          <input id="telefono" type="number" class="validate" name="telefono" value="{{ object.telefono }}">
+        		          <label for="telefono">Telefono</label>
+        		        </div>
+        		      </div>
+        		      <div class="row">
+        		        <div class="input-field col s6">
+        		          <input id="celular" type="number" class="validate"  name="celular" value="{{ object.celular }}">
+        		          <label for="celular">Celular</label>
+        		        </div>
+        		        <div class="input-field col s6">
+        		          <input id="email" type="email" class="validate"  name="email" value="{{ object.email }}">
+        		          <label for="email">Email</label>
+        		        </div>
+        		      </div>
+        		      <div class="row">
+        		        <div class="input-field col s6">
+        		          <input id="password" type="password" class="validate"  name="password1" value="{{ object.password }}">
+        		          <label for="password">Contraseña</label>
+        		        </div>
+        		        <div class="input-field col s6">
+        		          <input id="password2" type="password" class="validate" name="password2">
+        		          <label for="password2">Confirmar Contraseña</label>
+        		        </div>
+        		      </div>
+           			</div>
+
+                    <div class="col l6 offset-l3 s6 center">
+                      <button class="waves-effect red white-text black-text btn ">Cancelar</button>
+                      <button type="submit" href="#" class="waves-effect red white-text black-text btn ">Actualizar Usuario</button>
+                      <br><br>
+                   </div>
+
+        	   </div>
+
+            </form>
+		    {% endblock %}
+
+            </div>
+
+
+               <div class="fixed-action-btn">
+                <a class="btn-floating btn-large red modal-trigger"  onClick="location.href='/account/usuarios/add'">
+                  <i class="large material-icons">add</i>
+                </a>
+                <ul>
+                  <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+                  <li><a class="btn-floating yellow darken-1"><i class="material-icons">help</i></a></li>
+                </ul>
+              </div>
+
+
+
+            </div>
+          </div>
+           <!-- ACA TERMINA EL CONTENIDO DE EL TAB 3 -->
+
+        
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+      <script>
+              
+          $(document).ready(function() {
+            $(".button-collapse").sideNav();
+            $('.modal').modal();
+            $('select').material_select();
+          });
+                
+        </script>
+      
+    </body>
+  </html>

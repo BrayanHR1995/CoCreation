@@ -1,0 +1,992 @@
+
+<!DOCTYPE html>
+
+  <html>
+    <head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
+        {% load staticfiles %}
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  media="screen,projection"/>
+      <style>
+          html { 
+              background: url('../../images/fondologin.png') no-repeat center center fixed; 
+              -webkit-background-size: cover;
+              -moz-background-size: cover;
+              -o-background-size: cover;
+              background-size: cover;
+            }
+      </style>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+      <title>Administracion</title>
+    </head>
+
+
+    <body>
+        <nav class="nav-extended hoverable #283593 indigo darken-3">
+            <div class="nav-wrapper">
+                <!-- Dropdown Structure -->
+              <ul id="dropdown1" class="dropdown-content">
+                <li><a href="#!">Log de actividad</a></li>
+                <li><a href="#!">Ayuda</a></li>
+                <li class="divider"></li>
+                <li><a onClick="location.href='/salir/'">Cerrar Sesion</a></li>
+              </ul>
+              <a href="#" class="brand-logo center"><img class="responsive-img" src="{% static 'images/logo-01.png' %}" width="90"></a>
+              <a href="#" data-activates="mobile-demo" class="button-collapse large"><i class="material-icons">menu</i></a>
+              <ul id="" class="right hide-on-med-and-down">
+
+                <li><a href="#">Nuevos usuarios</a></li>
+                <li><a href="#">Incentivos</a></li>
+                <li><a href="#"><i class="material-icons">notifications</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Administrador<i class="material-icons right">arrow_drop_down</i></a></li>
+              </ul>
+              <ul class="side-nav" id="mobile-demo">
+                <li><a href="sass.html"><i class="material-icons">lightbulb_outline</i>Retos</a></li>
+                <li><a href="badges.html"><i class="material-icons">group</i>Nuevos usuarios</a></li>
+                <li><a href="collapsible.html"><i class="material-icons">face</i>Incentivos</a></li>
+                <li class="divider"></li>
+                <li><a href="collapsible.html"><i class="material-icons">notifications</i>Notificaciones</a></li>
+                <li><a href="#!"><i class="material-icons">visibility</i>Log de actividad</a></li>
+                <li><a href="#!"><i class="material-icons">help</i>Ayuda</a></li>
+                
+                <li><a href="#!"><i class="material-icons">close</i>Cerrar Sesion</a></li>
+                
+              </ul>
+              
+            </div>
+            <div class="nav-content">
+              <ul class="tabs tabs-transparent">
+                <li class="tab"><a class="active" href="#test1">Inicio</a></li>
+                <li class="tab"><a href="#test2">Areas</a></li>
+                <li class="tab"><a href="#test3">Usuarios</a></li>
+                <li class="tab"><a href="#test4">Retos</a></li>
+                <li class="tab"><a href="#test5">Estadisticas</a></li>
+              </ul>
+            </div>
+        </nav>
+          <div id="test1" class="col s12">
+              <div class="row">
+                <div class="col s12 m6 l6 offset-l1">
+                    <div class="card-panel white hoverable">
+                        <span class="card-title center #283593 indigo-text text-darken-3"><h5>Ultimos retos</h5></span>
+                        <li class="divider"></li>
+                        <div class="row">
+                            <!-- Aca empieza un objeto card -->
+                            <div class="col s12 m6 l4">
+                                <div class="card hoverable">
+        
+                                    <a class="btn-floating right waves-effect waves-light red  modal-trigger" href="#modal_delete1"><i class="material-icons">delete</i></a>
+                                    <div class="card-image">
+                                        <img src="{% static 'images/logo-01.png' %}">
+                                        <a class="btn-floating btn-large halfway-fab waves-effect waves-light #283593 indigo darken-3 modal-trigger" href="#modal_edit1"><i class="material-icons ">edit</i></a>
+                                    </div>
+            
+                                    <div class="card-content">
+                                      <span class="card-title">Nombre de Reto</span>
+                                      <p><a class="waves-effect  modal-trigger" href="#modalre">Ver mas</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aca termina un objeto card -->
+                            
+                            <!-- Aca empieza un objeto card -->
+                            <div class="col s12 m6 l4">
+                                <div class="card hoverable">
+        
+                                    <a class="btn-floating right waves-effect waves-light red  modal-trigger" href="#modal_delete1"><i class="material-icons">delete</i></a>
+                                    <div class="card-image">
+                                        <img src="{% static 'images/logo-01.png' %}">
+                                        <a class="btn-floating btn-large halfway-fab waves-effect waves-light #283593 indigo darken-3 modal-trigger" href="#modal_edit1"><i class="material-icons ">edit</i></a>
+                                    </div>
+            
+                                    <div class="card-content">
+                                      <span class="card-title">Nombre de Reto</span>
+                                      <p><a class="waves-effect  modal-trigger" href="#modalre">Ver mas</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aca termina un objeto card -->
+                            
+                            <!-- Aca empieza un objeto card -->
+                            <div class="col s12 m6 l4">
+                                <div class="card hoverable">
+        
+                                    <a class="btn-floating right waves-effect waves-light red  modal-trigger" href="#modal_delete1"><i class="material-icons">delete</i></a>
+                                    <div class="card-image">
+                                        <img src="{% static 'images/logo-01.png' %}">
+                                        <a class="btn-floating btn-large halfway-fab waves-effect waves-light #283593 indigo darken-3 modal-trigger" href="#modal_edit1"><i class="material-icons ">edit</i></a>
+                                    </div>
+            
+                                    <div class="card-content">
+                                      <span class="card-title">Nombre de Reto</span>
+                                      <p><a class="waves-effect  modal-trigger" href="#modalre">Ver mas</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aca termina un objeto card -->
+                            
+                            <!-- Aca empieza un objeto card -->
+                            <div class="col s12 m6 l4">
+                                <div class="card hoverable">
+        
+                                    <a class="btn-floating right waves-effect waves-light red  modal-trigger" href="#modal_delete1"><i class="material-icons">delete</i></a>
+                                    <div class="card-image">
+                                        <img src="{% static 'images/logo-01.png' %}">
+                                        <a class="btn-floating btn-large halfway-fab waves-effect waves-light #283593 indigo darken-3 modal-trigger" href="#modal_edit1"><i class="material-icons ">edit</i></a>
+                                    </div>
+            
+                                    <div class="card-content">
+                                      <span class="card-title">Nombre de Reto</span>
+                                      <p><a class="waves-effect  modal-trigger" href="#modalre">Ver mas</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aca termina un objeto card -->
+                            
+                            <!-- Aca empieza un objeto card -->
+                            <div class="col s12 m6 l4">
+                                <div class="card hoverable">
+        
+                                    <a class="btn-floating right waves-effect waves-light red  modal-trigger" href="#modal_delete1"><i class="material-icons">delete</i></a>
+                                    <div class="card-image">
+                                        <img src="{% static 'images/logo-01.png' %}">
+                                        <a class="btn-floating btn-large halfway-fab waves-effect waves-light #283593 indigo darken-3 modal-trigger" href="#modal_edit1"><i class="material-icons ">edit</i></a>
+                                    </div>
+            
+                                    <div class="card-content">
+                                      <span class="card-title">Nombre de Reto</span>
+                                      <p><a class="waves-effect  modal-trigger" href="#modalre">Ver mas</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aca termina un objeto card -->
+                            
+                            <!-- Aca empieza un objeto card -->
+                            <div class="col s12 m6 l4">
+                                <div class="card hoverable">
+        
+                                    <a class="btn-floating right waves-effect waves-light red  modal-trigger" href="#modal_delete1"><i class="material-icons">delete</i></a>
+                                    <div class="card-image">
+                                        <img src="{% static 'images/logo-01.png' %}">
+                                        <a class="btn-floating btn-large halfway-fab waves-effect waves-light #283593 indigo darken-3 modal-trigger" href="#modal_edit1"><i class="material-icons ">edit</i></a>
+                                    </div>
+            
+                                    <div class="card-content">
+                                      <span class="card-title">Nombre de Reto</span>
+                                      <p><a class="waves-effect  modal-trigger" href="#modalre">Ver mas</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aca termina un objeto card -->
+                            
+                            
+                        </div>
+                         <p class="center"><a href="#">Ver todos los retos</a></p>
+                    </div>
+                </div>
+                <div class="col s12 m6 l4">
+                    <div class="card-panel white hoverable">
+                        <span class="card-title center #283593 indigo-text text-darken-3"><h5>Usuarios con mayor actividad</h5></span>
+                        <li class="divider"></li>
+                        <ul class="collection">
+                            <li class="collection-item avatar">
+                              <img src="../../images/man.png" alt="" class="circle">
+                              <span class="title">Nombre Completo</span>
+                              <a href="#!" class="secondary-content"><i class="">45 minutos</i></a>
+                            </li>
+                            
+                            <li class="collection-item avatar">
+                              <img src="../../images/man.png" alt="" class="circle">
+                              <span class="title">Nombre Completo</span>
+                              <a href="#!" class="secondary-content"><i class="">3 horas</i></a>
+                            </li>
+                            
+                            <li class="collection-item avatar">
+                              <img src="../../images/man.png" alt="" class="circle">
+                              <span class="title">Nombre Completo</span>
+                              <a href="#!" class="secondary-content"><i class="">1 dia</i></a>
+                            </li>
+                            
+                        </ul>
+                        
+                        <p class="center"><a href="#">Ver todos los usuarios</a></p>
+                    </div>
+                </div>
+              </div>
+          </div>
+          
+          
+          <!-- ACA VA EL CONTENIDO DE EL TAB 2 -->
+          
+          <div id="test2" class="col s12">
+              <br><br><br>
+              
+              <div class="row">
+                <div class="col s12 m6 l8 offset-l2">
+                  
+                  <div class="card-panel white hoverable">  
+                  <div class="row">
+                    
+                     <!-- Aca empieza un objeto card -->
+                    <div class="col s12 m6 l3">
+                      <div class="card hoverable">
+                          <a class="btn-floating right waves-effect waves-light red  modal-trigger" href="#modal_delete"><i class="material-icons">delete</i></a>
+                        <div class="card-image">
+                          <img src="{% static 'images/logo-01.png' %}">
+                          <a class="btn-floating btn-large halfway-fab waves-effect waves-light #283593 indigo darken-3 modal-trigger" href="#modal_edit"><i class="material-icons ">edit</i></a>
+   
+                        </div>
+                        <div class="card-content">
+                          <span class="card-title">Nombre de Area</span>
+                          <p>Responsable: Diego Asencio</p>
+                        </div>
+                      </div>
+                    </div>
+                     <!-- Aca termina un objeto card -->
+                     
+
+                    
+                  </div>  
+                  </div> 
+                </div>
+              </div>
+
+
+              <div class="fixed-action-btn">
+                <a class="btn-floating btn-large red modal-trigger" href="#modal1">
+                  <i class="large material-icons">add</i>
+                </a>
+                <ul>
+                  <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+                  <li><a class="btn-floating yellow darken-1"><i class="material-icons">help</i></a></li>
+                </ul>
+              </div>
+              
+              <!-- Modal Agregar Area -->
+              <div id="modal1" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                  <h4 class="center">Agregar Area</h4>
+                  
+                  <div class="row">
+                    <div class="col s12 m8 l8">
+                        
+                        <div class="row">
+                            <div class="input-field col s10 offset-s1">
+                              <i class="material-icons prefix">all_out</i>
+                              <input value="Area X" id="first_name2" type="text" class="validate">
+                              <label class="active" for="first_name2">Nombre de area</label>
+                            </div>
+                          </div>
+                          
+                          <div class="row">
+                            <form class="col s12">
+                              <div class="row">
+                                  <div class="input-field col s10 offset-s1">
+                                      <i class="material-icons prefix">assignment_ind</i>
+                                    <select>
+                                      <optgroup label="Responsables de Area">
+                                        <option value="3">Reponsable 3</option>
+                                        <option value="4">Responsable 4</option>
+                                      </optgroup>
+                                    </select>
+                                    <label>Asignar responsable</label>
+                                  </div>
+                              </div>
+                            </form>
+                          </div>
+                          
+                          <div class="row">
+                            <form class="col s12">
+                              <div class="row">
+                                <div class="input-field col s10 offset-s1">
+                                    <i class="material-icons prefix">comment</i>
+                                  <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                                  <label for="icon_prefix2">Descripcion del Area</label>
+                                </div>
+                              </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    <div class="col s12 m4 l4">
+                        
+                        <div class="row center">
+                            <div class="input-field">  
+                              <img class="responsive-img" src="{% static "images/logo-01.png" %}">
+                              
+                              <div class="file-field input-field">
+                                  <div class="btn waves-effect waves-blue">
+                                    <span>ABRIR</span>
+                                    <input type="file">
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Seleccione una imagen">
+                                  </div>
+                                
+                              </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                  </div>
+                  
+                  
+                  
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Guardar y agregar otra</a>
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancelar</a>
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agregar</a>
+                </div>
+              </div>
+              
+              <!-- Modal MOdificar Area -->
+              <div id="modal_edit" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                  <h4 class="center">Modificar Area</h4>
+                  
+                  <div class="row">
+                    <div class="col s12 m8 l8">
+                        
+                        <div class="row">
+                            <div class="input-field col s10 offset-s1">
+                              <i class="material-icons prefix">all_out</i>
+                              <input value="Area X" id="first_name2" type="text" class="validate">
+                              <label class="active" for="first_name2">Nombre de area</label>
+                            </div>
+                          </div>
+                          
+                          <div class="row">
+                            <form class="col s12">
+                              <div class="row">
+                                  <div class="input-field col s10 offset-s1">
+                                      <i class="material-icons prefix">assignment_ind</i>
+                                    <select>
+
+                                      <optgroup label="Responsables de Area">
+                                        <option value="3">Reponsable 3</option>
+                                        <option value="4">Responsable 4</option>
+                                      </optgroup>
+                                    </select>
+                                    <label>Asignar responsable</label>
+                                  </div>
+                              </div>
+                            </form>
+                          </div>
+                          
+                          <div class="row">
+                            <form class="col s12">
+                              <div class="row">
+                                <div class="input-field col s10 offset-s1">
+                                    <i class="material-icons prefix">comment</i>
+                                  <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                                  <label for="icon_prefix2">Descripcion del Area</label>
+                                </div>
+                              </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                    <div class="col s12 m4 l4">
+                        
+                        <div class="row center">
+                            <div class="input-field">  
+                              <img class="responsive-img" src="{% static "images/logo-01.png" %}">
+                              
+                              <div class="file-field input-field">
+                                  <div class="btn waves-effect waves-blue">
+                                    <span>ABRIR</span>
+                                    <input type="file">
+                                  </div>
+                                  <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Seleccione una imagen">
+                                  </div>
+                                
+                              </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                  </div>
+                  
+                  
+                  
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancelar</a>
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Actualizar</a>
+                </div>
+              </div>
+              
+              
+              <!-- Modal Eliminar -->
+              <div id="modal_delete" class="modal">
+                <div class="modal-content">
+                  <h4>Eliminar Area</h4>
+                  <p>���En realidad desea eliminar esta area?</p>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Eliminar</a>
+                </div>
+              </div>
+              
+          </div>
+          
+           <!-- ACA TERMINA EL CONTENIDO DE EL TAB 2 -->
+          
+          
+           <!-- ACA VA EL CONTENIDO DE EL TAB 3 -->
+          
+          <div id="test3" class="col s12">
+              <div class="row">
+                <div class="col s12 m12 l12">
+                    <div class="card-panel white hoverable">
+                        <span class="card-title center #283593 indigo-text text-darken-3"><h5>Administradores</h5></span>
+                        <li class="divider"></li>
+                        <div class="row">
+
+                            
+                            <!-- Aca empieza un objeto card -->
+                            <div class="col s12 m4 l2">
+                                <div class="card hoverable">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                      <img class="activator" src="{% static "images/logo-01.png" %}">
+                                    </div>
+                                    <div class="card-content">
+                                      <span class="card-title activator grey-text text-darken-4">Nombre del Administrador<i class="material-icons right">more_vert</i></span>
+                                      <p><a class="waves-effect  modal-trigger" href="#modalad">Ver mas</a></p>
+                                    </div>
+                                    <div class="card-reveal">
+                                      <span class="card-title grey-text text-darken-4">Nombre del Administrador<i class="material-icons right">close</i></span>
+                                      <ul>
+                                          <li><p>correo@servidor.com</p></li>
+                                          <li><p>Administrador</p></li>
+                                      </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aca termina un objeto card -->
+                        </div>
+                        <ul class="pagination center">
+                            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                            <li class="active"><a href="#!">1</a></li>
+                            <li class="waves-effect"><a href="#!">2</a></li>
+                            <li class="waves-effect"><a href="#!">3</a></li>
+                            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col s12 m12 l12">
+                    <div class="card-panel white hoverable">
+                        <span class="card-title center #283593 indigo-text text-darken-3"><h5>Responsables de Area</h5></span>
+                        <li class="divider"></li>
+                        <div class="row">
+                            <!-- Aca empieza un objeto card -->
+                            <div class="col s12 m4 l2">
+                                <div class="card hoverable">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                      <img class="activator" src="{% static "images/logo-01.png" %}">
+                                    </div>
+                                    <div class="card-content">
+                                      <span class="card-title activator grey-text text-darken-4">Nombre del Responsable<i class="material-icons right">more_vert</i></span>
+                                      <p><a class="waves-effect  modal-trigger" href="#modalad">Ver mas</a></p>
+                                    </div>
+                                    <div class="card-reveal">
+                                      <span class="card-title grey-text text-darken-4">Nombre del Administrador<i class="material-icons right">close</i></span>
+                                      <ul>
+                                          <li><p>correo@servidor.com</p></li>
+                                          <li><p>Administrador</p></li>
+                                      </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aca termina un objeto card -->
+                        </div>
+                        <ul class="pagination center">
+                            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                            <li class="active"><a href="#!">1</a></li>
+                            <li class="waves-effect"><a href="#!">2</a></li>
+                            <li class="waves-effect"><a href="#!">3</a></li>
+                            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col s12 m12 l12">
+                    <div class="card-panel white hoverable">
+                        <span class="card-title center #283593 indigo-text text-darken-3"><h5>Evaluadores</h5></span>
+                        <li class="divider"></li>
+                        <div class="row">
+
+                            
+                            <!-- Aca empieza un objeto card -->
+                            <div class="col s12 m4 l2">
+                                <div class="card hoverable">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                      <img class="activator" src="{% static "images/logo-01.png" %}">
+                                    </div>
+                                    <div class="card-content">
+                                      <span class="card-title activator grey-text text-darken-4">Nombre del Evaluador<i class="material-icons right">more_vert</i></span>
+                                      <p><a class="waves-effect  modal-trigger" href="#modalad">Ver mas</a></p>
+                                    </div>
+                                    <div class="card-reveal">
+                                      <span class="card-title grey-text text-darken-4">Nombre del Administrador<i class="material-icons right">close</i></span>
+                                      <ul>
+                                          <li><p>correo@servidor.com</p></li>
+                                          <li><p>Evaluador</p></li>
+                                      </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aca termina un objeto card -->
+                        </div>
+                        <ul class="pagination center">
+                            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                            <li class="active"><a href="#!">1</a></li>
+                            <li class="waves-effect"><a href="#!">2</a></li>
+                            <li class="waves-effect"><a href="#!">3</a></li>
+                            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+                
+                <div class="col s12 m12 l12">
+                    <div class="card-panel white hoverable">
+                        <span class="card-title center #283593 indigo-text text-darken-3"><h5>Emprendedores Lideres</h5></span>
+                        <li class="divider"></li>
+                        <div class="row">
+
+                            
+                            <!-- Aca empieza un objeto card -->
+                            <div class="col s12 m4 l2">
+                                <div class="card hoverable">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                      <img class="activator" src="{% static "images/logo-01.png" %}">
+                                    </div>
+                                    <div class="card-content">
+                                      <span class="card-title activator grey-text text-darken-4">Nombre del Emprendedor<i class="material-icons right">more_vert</i></span>
+                                      <p><a class="waves-effect  modal-trigger" href="#modalad">Ver mas</a></p>
+                                    </div>
+                                    <div class="card-reveal">
+                                      <span class="card-title grey-text text-darken-4">Nombre del Emprendedor<i class="material-icons right">close</i></span>
+                                      <ul>
+                                          <li><p>correo@servidor.com</p></li>
+                                          <li><p>Emprendedor</p></li>
+                                      </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aca termina un objeto card -->
+                        </div>
+                        <ul class="pagination center">
+                            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                            <li class="active"><a href="#!">1</a></li>
+                            <li class="waves-effect"><a href="#!">2</a></li>
+                            <li class="waves-effect"><a href="#!">3</a></li>
+                            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col s12 m12 l12">
+                    <div class="card-panel white hoverable">
+                        <span class="card-title center #283593 indigo-text text-darken-3"><h5>Colaboradores</h5></span>
+                        <li class="divider"></li>
+                        <div class="row">
+
+                            
+                            <!-- Aca empieza un objeto card -->
+                            <div class="col s12 m4 l2">
+                                <div class="card hoverable">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                      <img class="activator" src="{% static "images/logo-01.png" %}">
+                                    </div>
+                                    <div class="card-content">
+                                      <span class="card-title activator grey-text text-darken-4">Nombre del Emprendedor<i class="material-icons right">more_vert</i></span>
+                                      <p><a class="waves-effect  modal-trigger" href="#modalad">Ver mas</a></p>
+                                    </div>
+                                    <div class="card-reveal">
+                                      <span class="card-title grey-text text-darken-4">Nombre del Emprendedor<i class="material-icons right">close</i></span>
+                                      <ul>
+                                          <li><p>correo@servidor.com</p></li>
+                                          <li><p>Emprendedor</p></li>
+                                      </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aca termina un objeto card -->
+                        </div>
+
+                        <ul class="pagination center">
+                            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                            <li class="active"><a href="#!">1</a></li>
+                            <li class="waves-effect"><a href="#!">2</a></li>
+                            <li class="waves-effect"><a href="#!">3</a></li>
+                            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col s12 m12 l12">
+                    <div class="card-panel white hoverable">
+                        <span class="card-title center #283593 indigo-text text-darken-3"><h5>Aspirantes</h5></span>
+                        <li class="divider"></li>
+                        <div class="row">
+
+                            
+                            <!-- Aca empieza un objeto card -->
+                            <div class="col s12 m4 l2">
+                                <div class="card hoverable">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                      <img class="activator" src="{% static "images/logo-01.png" %}">
+                                    </div>
+                                    <div class="card-content">
+                                      <span class="card-title activator grey-text text-darken-4">Nombre del Aspirante<i class="material-icons right">more_vert</i></span>
+                                      <p><a class="waves-effect  modal-trigger" href="#modalad">Ver mas</a></p>
+                                    </div>
+                                    <div class="card-reveal">
+                                      <span class="card-title grey-text text-darken-4">Nombre del Aspirante<i class="material-icons right">close</i></span>
+                                      <ul>
+                                          <li><p>correo@servidor.com</p></li>
+                                          <li><p>Aspirante</p></li>
+                                      </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Aca termina un objeto card -->
+
+                        </div>
+                        <ul class="pagination center">
+                            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                            <li class="active"><a href="#!">1</a></li>
+                            <li class="waves-effect"><a href="#!">2</a></li>
+                            <li class="waves-effect"><a href="#!">3</a></li>
+                            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+          </div>
+           <!-- ACA TERMINA EL CONTENIDO DE EL TAB 3 -->
+          
+           <!-- ACA VA EL CONTENIDO DE EL TAB 4 -->
+          <div id="test4" class="col s12">
+ 
+              <br><br><br>
+              
+              <div class="row">
+                <div class="col s12 m12 l12">
+                  
+                  <div class="card-panel white hoverable">  
+                  <div class="row">
+                    
+                     <!-- Aca empieza un objeto card -->
+                    <div class="col s12 m4 l2">
+                      <div class="card hoverable">
+                          <a class="btn-floating right waves-effect waves-light red  modal-trigger" href="#modal_delete1"><i class="material-icons">delete</i></a>
+                        <div class="card-image">
+                          <img src="{% static "images/logo-01.png" %}">
+                          <a class="btn-floating btn-large halfway-fab waves-effect waves-light #283593 indigo darken-3 modal-trigger" href="#modal_edit1"><i class="material-icons ">edit</i></a>
+   
+                        </div>
+                        <div class="card-content">
+                          <span class="card-title">Nombre de Reto</span>
+                          <p>Descripcion corta del reto</p>
+                          <p><a class="waves-effect  modal-trigger" href="#modalre">Ver mas</a></p>
+                        </div>
+                      </div>
+                    </div>
+                     <!-- Aca termina un objeto card -->
+                     
+
+                    
+                  </div>  
+                  </div> 
+                </div>
+              </div>
+
+
+              <div class="fixed-action-btn">
+                <a class="btn-floating btn-large red modal-trigger" href="#modal11">
+                  <i class="large material-icons">add</i>
+                </a>
+                <ul>
+                  <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+                  <li><a class="btn-floating yellow darken-1"><i class="material-icons">help</i></a></li>
+                </ul>
+              </div>
+              
+             <!-- Modal Structure -->
+              <div id="modal11" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                  <h4 class="center">Agregar Reto</h4>
+                  
+                  <div class="row center">
+                    <div class="input-field col s6 offset-s3">  
+                      <img class="responsive-img" width="300" height="300" src="{% static "images/logo-01.png" %}">
+
+
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="row">
+                    <div class="input-field col s10 offset-s1 offset-m1 offset-l1 ">
+                      <input value="Alvin" id="first_name2" type="text" class="validate">
+                      <label class="active" for="first_name2">Nombre del reto</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <form class="col s12">
+                      <div class="row">
+                        <div class="input-field col s10 offset-s1 offset-m1 offset-l1 ">
+                          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                          <label for="icon_prefix2">Descripcion del reto</label>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="row">
+                    <form class="col s4 m4 l4">
+                      <div class="row">
+                          <div class="input-field col s10 offset-s1">
+                            <select>
+                              <optgroup label="Administradores">
+                                <option value="1">Admin 1</option>
+                                <option value="2">Admin 2</option>
+                              </optgroup>
+
+                            </select>
+                            <label>Fase</label>
+                          </div>
+                      </div>
+                    </form>
+                    <form class="col s4 m4 l4">
+                      <div class="row">
+                          <div class="input-field col s10 offset-s1">
+                            <select>
+                              <optgroup label="Administradores">
+                                <option value="1">Admin 1</option>
+                                <option value="2">Admin 2</option>
+                              </optgroup>
+
+                            </select>
+                            <label>Área</label>
+                          </div>
+                      </div>
+                    </form>
+                    <form class="col s4 m4 l4">
+                      <div class="row">
+                          <div class="input-field col s10 offset-s1">
+                            <select>
+                              <optgroup label="Administradores">
+                                <option value="1">Admin 1</option>
+                                <option value="2">Admin 2</option>
+                              </optgroup>
+
+                            </select>
+                            <label>Tiempo</label>
+                          </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="row center hide-on-med-and-down" >
+                      <form action="#">
+                      <div class="offset-s6 offset-m6 offset-l6  ">
+
+                          <div class="file-field  col l2">
+                              <i class="material-icons tooltipped " data-position="bottom" data-delay="50" data-tooltip="Adjuntar archivos"><input type="file" multiple>attach_file</i>
+                          </div>
+                          <div class="file-field  col l2">
+                              <i class="material-icons tooltipped " data-position="bottom" data-delay="50" data-tooltip="Adjuntar link"><input type="file" multiple>cloud</i>
+                          </div>
+                          <div class="file-field  col l2">
+                              <i class="material-icons tooltipped " data-position="bottom" data-delay="50" data-tooltip="Adjuntar imagen"><input type="file" multiple>image</i>
+                          </div>
+                          <div class="file-field  col l2">
+                              <i class="material-icons tooltipped " data-position="bottom" data-delay="50" data-tooltip="Adjuntar video"><input type="file" multiple>video_library</i>
+                          </div>
+
+
+
+
+
+                      </div>
+                      </form>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Guardar y agregar otro</a>
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Guardar</a>
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancelar</a>
+                </div>
+              </div>
+              
+              <!-- Modal Structure -->
+              <div id="modal_edit1" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                  <h4 class="center">Editar Reto</h4>
+                  
+                  <div class="row center">
+                    <div class="input-field col s6 offset-s3">  
+                      <img class="responsive-img" width="300" height="300" src="{% static "images/logo-01.png" %}">
+                      
+                      <div class="file-field input-field">
+                          <div class="btn">
+                            <span>File</span>
+                            <input type="file" multiple>
+                          </div>
+                          <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                          </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Actualizar</a>
+                </div>
+              </div>
+              
+              <!-- Modal Structure -->
+              <div id="modal_delete1" class="modal">
+                <div class="modal-content">
+                  <h4>Eliminar Area</h4>
+                  <p>En realidad desea eliminar ests reto?</p>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Eliminar</a>
+                </div>
+              </div>
+              
+          </div>
+          
+           <!-- ACA TERMINA EL CONTENIDO DE EL TAB 4 -->
+          
+          <div id="modalad" class="modal">
+            <div class="modal-content">
+              <div class="row center">
+                <h4>Datos Usuarios</h4>
+              </div>
+              <div class="row center">
+                <img class="responsive-img" width="300" height="300" src="{% static "images/logo-01.png" %}">
+              </div>              
+              <div class="row">
+                <div class="input-field col s6 m6 l6">
+                  <input disabled value="Brayan " id="disabled" type="text" class="validate">
+                  <label for="disabled">Nombres:</label>
+                </div>
+                <div class="input-field col s6 m6 l6">
+                  <input disabled value="Herrera Rocha" id="disabled" type="text" class="validate">
+                  <label for="disabled">Apellidos</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6 m6 l6">
+                  <input disabled value="******** " id="disabled" type="text" class="validate">
+                  <label for="disabled">Cedula:</label>
+                </div>
+                <div class="input-field col s6 m6 l6">
+                  <input disabled value="3*******" id="disabled" type="text" class="validate">
+                  <label for="disabled">Telefono</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6 m6 l6">
+                  <input disabled value="Calle Siempreviva " id="disabled" type="text" class="validate">
+                  <label for="disabled">Direccion:</label>
+                </div>
+                <div class="input-field col s6 m6 l6">
+                  <input disabled value="bhr@gmail.com" id="disabled" type="text" class="validate">
+                  <label for="disabled">Correo Electronico</label>
+                </div>
+    
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+                  <!-- Modal Structure -->
+          <div id="modalre" class="modal">
+            <div class="modal-content">
+              <div class="row center">
+                <h4>Datos Reto</h4>
+              </div>
+              <div class="row center">
+                <img class="responsive-img" width="300" height="300" src="{% static "images/logo-01.png" %}">
+              </div>              
+              <div class="row">
+                <div class="input-field col s12 m12 l12">
+                  <input disabled value="Aplicacion movil de ubicacion de perros " id="disabled" type="text" class="validate">
+                  <label for="disabled">Nombre Reto:</label>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m12 l12">
+                  <input disabled value="Hola Mundo Hola Mundo Hola Mundo  " id="disabled" type="text" class="validate">
+                  <label for="disabled">Descripcion</label>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="input-field col s4 m4 l4">
+                  <input disabled value="Numerp 1 " id="disabled" type="text" class="validate">
+                  <label for="disabled">Fase:</label>
+                </div>
+                <div class="input-field col s4 m4 l4">
+                  <input disabled value="APPS" id="disabled" type="text" class="validate">
+                  <label for="disabled">Area</label>
+                </div>
+                <div class="input-field col s4 m4 l4">
+                  <input disabled value="1 dia" id="disabled" type="text" class="validate">
+                  <label for="disabled">Tiempo</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6 m6 l6">
+                  <a class="waves-effect  btn">Archivos</a>
+                </div>
+
+    
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+          </div>
+        </div>
+        
+        
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="{% static "js/materialize.min.js"%}"></script>
+      <script>
+              
+          $(document).ready(function() {
+            $(".button-collapse").sideNav();
+            $('.modal').modal();
+            $('select').material_select();
+          });
+                
+        </script>
+      
+    </body>
+  </html>

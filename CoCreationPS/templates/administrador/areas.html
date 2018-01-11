@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+
+  <html>
+    <head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        {% load staticfiles %}
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="{% static 'css/background.css' %}" media="screen,projection"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+      <title>Areas</title>
+    </head>
+
+
+    <body>
+        <nav class="nav-extended hoverable #283593 indigo darken-3">
+            <div class="nav-wrapper">
+                <!-- Dropdown Structure -->
+              <ul id="dropdown1" class="dropdown-content">
+                <li><a href="#!">Log de actividad</a></li>
+                <li><a href="#!">Ayuda</a></li>
+                <li class="divider"></li>
+                <li><a onClick="location.href='/salir/'">Cerrar Sesion</a></li>
+              </ul>
+              <a href="#" class="brand-logo center"><img class="responsive-img" src="{% static 'images/logo-01.png' %}" width="90"></a>
+              <a href="#" data-activates="mobile-demo" class="button-collapse large"><i class="material-icons">menu</i></a>
+              <ul id="" class="right hide-on-med-and-down">
+
+                <li><a href="#">Nuevos usuarios</a></li>
+                <li><a href="#">Incentivos</a></li>
+                <li><a href="#"><i class="material-icons">notifications</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Administrador<i class="material-icons right">arrow_drop_down</i></a></li>
+              </ul>
+              <ul class="side-nav" id="mobile-demo">
+                <li><a href="sass.html"><i class="material-icons">lightbulb_outline</i>Retos</a></li>
+                <li><a href="badges.html"><i class="material-icons">group</i>Nuevos usuarios</a></li>
+                <li><a href="collapsible.html"><i class="material-icons">face</i>Incentivos</a></li>
+                <li class="divider"></li>
+                <li><a href="collapsible.html"><i class="material-icons">notifications</i>Notificaciones</a></li>
+                <li><a href="#!"><i class="material-icons">visibility</i>Log de actividad</a></li>
+                <li><a href="#!"><i class="material-icons">help</i>Ayuda</a></li>
+                
+                <li><a href="#!"><i class="material-icons">close</i>Cerrar Sesion</a></li>
+                
+              </ul>
+              
+            </div>
+            <div class="nav-content">
+              <ul class="tabs tabs-transparent">
+                <li class="tab"><a onClick="location.href='/account/inicio'">Inicio</a></li>
+                <li class="tab"><a class="active" onClick="location.href='/account/areas'">Areas</a></li>
+                <li class="tab"><a onClick="location.href='/account/usuarios'">Usuarios</a></li>
+                <li class="tab"><a onClick="location.href='/account/retos'">Retos</a></li>
+                <li class="tab"><a onClick="location.href='/account/estadisticas'">Estadisticas</a></li>
+              </ul>
+            </div>
+        </nav>
+
+
+         <!-- ACA VA EL CONTENIDO DE EL TAB 2 -->
+
+          <div id="areas" class="col s12">
+              <br><br><br>
+
+              <div class="row">
+                <div class="col s12 m12 l12">
+
+                  <div class="card-panel white hoverable">
+                  <div class="row">
+
+                      {% if object_list %}
+                      {% for solicitud in object_list %}
+                     <!-- Aca empieza un objeto card -->
+                    <div class="col s12 m6 l3">
+                      <div class="card hoverable">
+                          <a class="btn-floating btn-large halfway-fab waves-effect waves-light yellow indigo darken-3 modal-trigger" onClick="location.href='/account/areas/ver/{{solicitud.id}}'"><i class="material-icons ">remove_red_eye</i></a>
+
+                          <a class="btn-floating right waves-effect waves-light red  modal-trigger align-left" onClick="location.href='/account/areas/del/{{solicitud.id}}'"><i class="material-icons">delete</i></a>
+                        <div class="card-image">
+                          <img src="{% static 'images/logo-01.png' %}">
+                          <a class="btn-floating btn-large halfway-fab waves-effect waves-light #283593 indigo darken-3 modal-trigger" onClick="location.href='/account/areas/edit/{{solicitud.id}}'"><i class="material-icons ">edit</i></a>
+
+                        </div>
+                        <div class="card-content">
+                          <span class="card-title">{{ solicitud.nombre_area }}</span>
+                          <p>Responsable: Diego Asencio</p>
+                        </div>
+                      </div>
+                    </div>
+                     <!-- Aca termina un objeto card -->
+                    {% endfor %}
+                    {% else %}
+                        <h3>No hay areas registradas</h3>
+                    {% endif %}
+
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="fixed-action-btn">
+                <a class="btn-floating btn-large red modal-trigger" onClick="location.href='/account/areas/add'">
+                  <i class="large material-icons">add</i>
+                </a>
+                <ul>
+                  <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+                  <li><a class="btn-floating yellow darken-1"><i class="material-icons">help</i></a></li>
+                </ul>
+              </div>
+
+
+
+
+
+
+          </div>
+
+           <!-- ACA TERMINA EL CONTENIDO DE EL TAB 2 -->
+
+                  <!-- Modal Structure -->
+          <div id="modalarea" class="modal">
+            <div class="modal-content  blue lighten-2">
+              <div class="row center">
+                <h4>Datos Area</h4>
+              </div>
+              <div class="row center">
+                <img class="responsive-img" width="300" height="300" src="../../images/logo-01.png">
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m12 l12">
+                  <input disabled value="Aplicacion movil de ubicacion de perros " id="disabled" type="text" class="validate">
+                  <label for="disabled">Nombre Area</label>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m12 l12">
+                  <input disabled value="Hola Mundo Hola Mundo Hola Mundo  " id="disabled" type="text" class="validate">
+                  <label for="disabled">Responsable del Area</label>
+                </div>
+
+              </div>
+
+                            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                  <input disabled value="Muchos goles goles goles  " id="disabled" type="text" class="validate">
+                  <label for="disabled">Descripcion del Area</label>
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="input-field col s6 m6 l6">
+                  <a class="waves-effect  btn">Archivos</a>
+                </div>
+
+
+            </div>
+            <div class="modal-footer  blue lighten-2">
+              <a href="#!" class=" waves-effect waves-light btn #283593 indigo darken-3">Aceptar</a>
+            </div>
+          </div>
+        </div>
+        
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+      <script>
+              
+          $(document).ready(function() {
+            $(".button-collapse").sideNav();
+            $('.modal').modal();
+            $('select').material_select();
+            $('.modal-trigger').leanModal();
+          });
+                
+        </script>
+      
+    </body>
+  </html>

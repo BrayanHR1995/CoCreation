@@ -1,0 +1,53 @@
+{% load staticfiles %}
+
+<html lang="es">
+ <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="author" content="">
+         <!-- Le decimos al navegador que nuestra web esta optimizada para moviles -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+         <!-- Cargamos el CSS -->
+        <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}" media="screen,projection"/>
+
+        <link type="text/css" rel="stylesheet" href="{% static 'css/cc_bienvenida.css' %}" media="screen,projection"/>
+
+ <!-- Cargamos jQuery y materialize js -->
+         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+         <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+
+        <title>Bienvenida  - CoCreation</title>
+    </head>
+    <body>
+
+
+            <div class="row">
+              <div class="col s12 m12 l12 ">
+                <div class="card-panel indigo darken-3 valign ">
+                    <div class="row">
+                        <div class="row"></div>
+                            <div class="center">
+                                <div class="card-panel white col l6 m8 offset-l3 offset-m2" >
+                                    <img class="responsive-img "     width="450px" src="{% static 'images/logo-01.png'%}"/>
+                                    <div class="center">
+
+                                    <a class=" center    waves-effect waves-light btn #283593 indigo darken-3 " id="buttoningreso" type="button"  onClick="location.href='/login/'">Ingresar</a>
+                                    <a class=" center  waves-effect waves-light btn #283593 indigo darken-3" id="buttonregistro" type="button" onClick="location.href='/signup/'">Registrar</a>
+                                <div class="row"></div>
+                                    <div class="row">
+                                    <img class="responsive-img "     width="290px" src="{% static 'images/lacharme.png'%}"/>
+                                    <img class="responsive-img "     width="290px" src="{% static 'images/parque.png'%}"/>
+                                    </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+
+
+         </div>
+    </body>
+</html>

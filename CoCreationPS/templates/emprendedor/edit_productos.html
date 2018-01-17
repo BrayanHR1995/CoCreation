@@ -1,7 +1,8 @@
- <html>
+<html>
     <head>
       <meta charset="UTF-8">
-        {% load staticfiles %}
+
+      {% load staticfiles %}
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -9,7 +10,7 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>Mis Tareas</title>
+      <title>Portafolio de Servicios</title>
     </head>
 
     <body>
@@ -17,21 +18,27 @@
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="{% static  'js/materialize.min.js' %}"></script>
       <script src="{% static 'js/init.js' %}"></script>
+	    <script >
+         $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
 
+      </script>
 
 
 
 
       <nav>
         <div class=" nav-wrapper indigo darken-4"><a href="#" class="brand-logo">Logo</a>
-            <ul id="nav-mobile" class="side-nav indigo darken-4">
-                <li><a class="white-text " onClick="location.href='/account/emprendedor/dashboard'"><img  class="responsive-img"  width="50" height="50" src="{% static 'images/logo-01.png' %}" align="center"></a></li>
-                <li><div class="divider"></div></li>
+					<ul id="nav-mobile" class="side-nav indigo darken-4">
+				<li><a class="white-text " onClick="location.href='/account/emprendedor/dashboard'"><img  class="responsive-img"  width="50" height="50" src="{% static 'images/logo-01.png' %}" align="center"></a></li>
+				<li><div class="divider"></div></li>
                     <li><a class="white-text " onClick="location.href='/account/emprendedor/productos'"><img  class="responsive-img"  width="50" height="50" src="{% static 'images/portafolioDeServicios.png' %}" align="left">Portafolio de Servicios</a></li>
                     <li><a class="white-text " onClick="location.href='/account/emprendedor/misretos'"><img  class="responsive-img"  width="50" height="50" src="{% static 'images/MisRetos.png' %} " align="left">Mis Retos</a></li>
                     <li><a class="white-text " onClick="location.href='/account/emprendedor/equipo'"><img  class="responsive-img"  width="50" height="50" src="{% static 'images/MiEquipo.png' %} " align="left">Mi Equipo</a></li>
                     <li><a class="white-text " href=""><img  class="responsive-img"  width="50" height="50" src="{% static 'images/estadisticas.png' %}" align="left">Estadisticas</a></li>
-            </ul>
+      		</ul>
       		<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 
 
@@ -44,15 +51,11 @@
            	</div>
               <div>
                 <ul class=" center hide-on-med-and-down">
-
                   <li><a class=" tooltipped" data-position="bottom" data-delay="50" data-tooltip="Inicio" onClick="location.href='/account/emprendedor/dashboard'"><img class="responsive-img"  width="65" height="65" src="{% static 'images/inicio-01.png' %}"></a></li>
                   <li><a class=" tooltipped" data-position="bottom" data-delay="50" data-tooltip="Portafolio de Servicios" onClick="location.href='/account/emprendedor/productos'"><img  class="responsive-img"  width="65" height="65" src="{% static 'images/portafolioDeServicios.png' %}"></a></li>
                   <li><a class=" tooltipped" data-position="bottom" data-delay="50" data-tooltip="Mis Retos"  onClick="location.href='/account/emprendedor/misretos'"><img class="responsive-img"  width="65" height="65" src="{% static 'images/MisRetos.png ' %}"></a></li>
                   <li><a class=" tooltipped" data-position="bottom" data-delay="50" data-tooltip="Mi Equipo" onClick="location.href='/account/emprendedor/equipo'"><img class="responsive-img"  width="65" height="65" src="{% static 'images/MiEquipo.png' %}"></a></li>
                   <li><a class=" tooltipped" data-position="bottom" data-delay="50" data-tooltip="Estadisticas"  href=""><img class="responsive-img"  width="65" height="65" src="{% static 'images/estadisticas.png' %}"></a></li>
-
-
-
                 </ul>
               </div>
 
@@ -66,7 +69,7 @@
                 <li><a href="#!">Log de actividad</a></li>
                 <li><a href="#!">Ayuda</a></li>
                 <li class="divider"></li>
-                <li><a onClick="location.href='/salir/'">Cerrar Sesion</a></li>
+                <li><a href="http://cc.simultech.com.co/materialize/bienvenida.html">Cerrar Sesion</a></li>
               </ul>
 
 
@@ -86,63 +89,91 @@
           <div class="row">
             <div class="s1 m6 l3">
               <ul class="left hide-on-med-and-down">
-                <li><a href="#!" class="brand-logo blue-text text-darken-2">Tareas</a></li>
+                <li><a href="#!" class="brand-logo blue-text text-darken-2">Portafolio de Servicios</a></li>
               </ul>
             </div>
 
 
+            <div class="s12 m6 l3 ">
 
+
+            </div>
 
           </div>
 
 
         </div>
     </nav>
-    <br> </br>
+    <br></br>
 
+      <div class="row">
           <div class="row">
+                <div class="col s12 m12 l12">
 
-            <div class="col s12 m12 l8 offset-l2 card-panel center white blue-text hoverable"><h4>Mis Tareas</h4></div>
+                  <div class="card-panel white hoverable">
+                  <div class="row">
 
-      {% if object_list %}
-        {% for solicitud in object_list %}
-             <div class="col s12 m12 l8  offset-l2">
-                      <div class="col s12 m12">
-                        <div class="card horizontal hoverable">
-                          <div class="card-image">
-                            <img width="120" height="120" src="{% static 'images/reto-01.png' %}">
-                          </div>
-                          <div class="card-stacked">
-                            <div class="card-content">
-                              <p>{{ solicitud.nombre_tarea }} : {{ solicitud.descripcion }}</p>
-                              <a href="#!" class="primary-content"><i class="">{{ solicitud.estado.nombre_estado }}</i></a>
-                              <p>{{ solicitud.fechainicio }} a {{ solicitud.fechafin }}</p>
+                      {% block content %}
+                        <form method="post">{% csrf_token %}
+                          <!-- Modal Agregar Area -->
+                          <div id="modal1" >
+                            <div>
+                              <h4 class="center">Agregar Producto</h4>
+
+                              <div class="row">
+                                <div class="col s12 m8 l8">
+
+                                    <div class="row">
+                                        <div class="input-field col s10 offset-s1 offset-m1 offset-l1 ">
+                                          <input id="nombre" type="text" class="validate" name="nombre" value="{{ object.nombre }}">
+                                          <label class="active" for="nombre">Nombre del Producto</label>
+                                        </div>
+                                      </div>
+
+                                      <div class="row">
+                                            <div class="col s12">
+                                              <div class="row">
+                                                <div class="input-field col s10 offset-s1 offset-m1 offset-l1 ">
+                                                  <textarea id="descripcion" class="materialize-textarea" name="descripcion">{{ object.descripcion }}</textarea>
+                                                  <label for="descripcion">Descripcion del Producto</label>
+                                                </div>
+                                              </div>
+                                            </div>
+                                      </div>
+
+
+                                    <div class="row center hide-on-med-and-down" >
+
+
+
+                              </div>
+
+
+                                </div>
+                                    <div class="col s10 m3 l3 offset-s1 center">
+                                        <h4>Agregar Imagen</h4>
+                                        <input type="file" id="input-file-now" class="dropify" data-default-file="" name="ruta_imagen"   accept="image/*" />
+                                        <br>
+                                    </div>
+                              </div>
+
+
+
                             </div>
-
+                            <div class=" center">
+                              <a onClick="location.href='/account/emprendedor/productos'" class="waves-effect waves-light btn #283593 indigo darken-3 ">Cancelar</a>
+                              <button type="submit" class="waves-effect waves-light btn #283593 indigo darken-3">Agregar</button>
+                            </div>
                           </div>
-                              <a class="btn-floating waves-effect waves-light red  modal-trigger" onClick="location.href='/account/emprendedor/tareas/del/{{solicitud.id}}'"><i class="material-icons">delete</i></a>
-                              <a class="btn-floating waves-effect waves-light #283593 indigo darken-3 modal-trigger" onClick="location.href='/account/emprendedor/tareas/edit/{{solicitud.id}}'"><i class="material-icons ">edit</i></a>
 
-                        </div>
+                        </form>
+                        {% endblock %}
 
-                      </div>
-
+                  </div>
+                  </div>
+                </div>
               </div>
 
-        {% endfor %}
-      {% else %}
-        <h3>No hay areas registradas</h3>
-      {% endif %}
-
-      <div class="fixed-action-btn">
-        <a class="btn-floating btn-large red modal-trigger" onClick="location.href='/account/emprendedor/tareas/add'">
-          <i class="large material-icons">add</i>
-        </a>
-        <ul>
-          <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-          <li><a class="btn-floating yellow darken-1"><i class="material-icons">help</i></a></li>
-        </ul>
-      </div>
 
       </div>
 

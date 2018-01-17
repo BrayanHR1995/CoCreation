@@ -21,16 +21,24 @@ class Emprendimiento(models.Model):
     aporte = models.CharField(max_length=100)
     usuario = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.nombre_emprendimiento
+
 class Equipo(models.Model):
-    nombre = models.CharField(max_length=100)
-    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+   # nombre = models.CharField(max_length=100)
+    usuario = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
     emprendimiento = models.ForeignKey(Emprendimiento, null=True, blank=True, on_delete=models.CASCADE)
+
+
 
 class PortafolioPS(models.Model):
     nombre = models.CharField(max_length=100)
     descripcion = models.CharField(max_length=500)
-    ruta_imagen = models.CharField(max_length=100)
+    ruta_imagen = models.ImageField(upload_to="portafoliops/")
     emprendimiento = models.ForeignKey(Emprendimiento, null=True, blank=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nombre
 
 class Area(models.Model):
     nombre_area = models.CharField(max_length=100)
@@ -38,8 +46,14 @@ class Area(models.Model):
     ruta_imagen = models.ImageField( upload_to = 'imagenes/areas/')
     usuario_responsable = models.ForeignKey(Usuario, null=True, blank=True, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.nombre_area
+
 class Fase(models.Model):
     nombre_fase = models.CharField(max_length=100)
+
+class Estado(models.Model):
+    nombre_estado = models.CharField(max_length=100)
 
 
 class Reto(models.Model):
@@ -50,6 +64,9 @@ class Reto(models.Model):
     area = models.ForeignKey(Area, null=True, blank=True, on_delete=models.CASCADE)
     fase  = models.ForeignKey(Fase, null=True, blank=True, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.nombre_reto
+
 class Tarea(models.Model):
     nombre_tarea = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=500)
@@ -58,3 +75,8 @@ class Tarea(models.Model):
     usuario = models.ForeignKey(Usuario, null=True, blank=True, on_delete=models.CASCADE)
     estado = models.ForeignKey(Estado, null=True, blank=True, on_delete=models.CASCADE)
     reto = models.ForeignKey(Reto, null=True, blank=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nombre_tarea
+
+

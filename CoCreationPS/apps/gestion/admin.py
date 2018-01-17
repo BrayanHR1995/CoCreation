@@ -17,3 +17,7 @@ class AlbumImageInline(admin.TabularInline):
 
 class AlbumAdmin(admin.ModelAdmin):
     inlines = [ AlbumImageInline, ]
+
+@admin.register(PortafolioPS)
+class PortafolioAdmin(admin.ModelAdmin):
+    pass

@@ -1,9 +1,10 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.conf.urls import url
 from views import *
-
 urlpatterns = [
-    url(r'^account/$', Inicio.as_view(), name='inicio'),
-    url(r'^account/inicio/$', Inicio.as_view(), name='inicio'),
+    url(r'^account/$', dashboard.as_view(), name='inicio'),
+    url(r'^account/inicio/$', dashboard.as_view(), name='inicio'),
 
 
     url(r'^account/areas/$', ListarArea.as_view(), name='listar_areas'),
@@ -28,12 +29,25 @@ urlpatterns = [
 
 
     url(r'^account/estadisticas/$', estadisticas, name='estadisticas'),
-    url(r'^account/emprendedor/productos$', productos, name='productos'),
-    url(r'^account/emprendedor/equipo', equipo, name='equipo'),
-    url(r'^account/emprendedor/misretos', misretos, name='misretos'),
-    url(r'^account/emprendedor/dashboard', dashboard, name='misretos'),
-    url(r'^account/emprendedor/actividad_reciente', actividad_reciente, name='actividad_reciente'),
-    url(r'^account/emprendedor/mis_tareas', mis_tareas, name='mis_tareas'),
 
-]
+    url(r'^account/emprendedor/productos$', productos.as_view(), name='productos'),
+    url(r'^account/emprendedor/productos/add$', RegistroProductos.as_view(), name='agregar_productos'),
+    url(r'^account/emprendedor/productos/del/(?P<pk>\d+)$', EliminarProductos.as_view(), name='eliminar_productos'),
+    url(r'^account/emprendedor/productos/edit/(?P<pk>\d+)$', ModificarProductos.as_view(), name='modificar_productos'),
+    url(r'^account/emprendedor/productos/ver/(?P<pk>\d+)$', VerProductos.as_view(), name='ver_productos'),
+
+    url(r'^account/emprendedor/equipo', equipo.as_view(), name='equipo'),
+    url(r'^account/emprendedor/misretos', misretos, name='misretos'),
+    url(r'^account/emprendedor/dashboard', dashboard.as_view(), name='dashboard'),
+    url(r'^account/emprendedor/actividad_reciente', actividad_reciente, name='actividad_reciente'),
+
+
+
+    url(r'^account/emprendedor/mis_tareas', mis_tareas.as_view(), name='mis_tareas'),
+    url(r'^account/emprendedor/tareas/add$', RegistroTareas.as_view(), name='agregar_tareas'),
+    url(r'^account/emprendedor/tareas/del/(?P<pk>\d+)$', EliminarTareas.as_view(), name='eliminar_tareas'),
+    url(r'^account/emprendedor/tareas/edit/(?P<pk>\d+)$', ModificarTareas.as_view(), name='modificar_tareas'),
+    url(r'^account/emprendedor/tareas/ver/(?P<pk>\d+)$', VerTareas.as_view(), name='ver_tareas'),
+
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

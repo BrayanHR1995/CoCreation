@@ -65,7 +65,7 @@
                 <li><a href="#!">Log de actividad</a></li>
                 <li><a href="#!">Ayuda</a></li>
                 <li class="divider"></li>
-                <li><a href="http://cc.simultech.com.co/materialize/bienvenida.html">Cerrar Sesion</a></li>
+                <li><a onClick="location.href='/salir/'">Cerrar Sesion</a></li>
               </ul>
 
 
@@ -101,71 +101,31 @@
 
     <div id="test3" class="col s12">
       <div class="row">
-                    <div class="col s12 m6 l3">
-                      <div class="card hoverable">
-                          <a class="btn-floating btn-large halfway-fab waves-effect waves-light yellow indigo darken-3 modal-trigger" href="#"><i class="material-icons ">remove_red_eye</i></a>
+        {% if object_list %}
+            {% for solicitud in object_list %}
+                <div class="col s12 m6 l3">
+                  <div class="card hoverable">
+                      <a class="btn-floating btn-large halfway-fab waves-effect waves-light yellow indigo darken-3 modal-trigger" href="#"><i class="material-icons ">remove_red_eye</i></a>
 
-                          <a class="btn-floating right waves-effect waves-light red  modal-trigger align-left" href="#"><i class="material-icons">delete</i></a>
-                        <div class="card-image">
-                          <img src="{% static 'images/logo-01.png' %}">
-                          <a class="btn-floating btn-large halfway-fab waves-effect waves-light #283593 indigo darken-3 modal-trigger" href="#"><i class="material-icons ">edit</i></a>
+                      <a class="btn-floating right waves-effect waves-light red  modal-trigger align-left" href="#"><i class="material-icons">delete</i></a>
+                    <div class="card-image">
+                      <img src="{% static 'images/logo-01.png' %}">
+                      <a class="btn-floating btn-large halfway-fab waves-effect waves-light #283593 indigo darken-3 modal-trigger" href="#"><i class="material-icons ">edit</i></a>
 
-                        </div>
-                        <div class="card-content">
-                          <span class="card-title">Miembro del Equipo</span>
-                          <p>Miembro: Brayan Herrera</p>
-                        </div>
-                      </div>
                     </div>
-
-                    <div class="col s12 m6 l3">
-                      <div class="card hoverable">
-                          <a class="btn-floating btn-large halfway-fab waves-effect waves-light yellow indigo darken-3 modal-trigger" href="#modalarea"><i class="material-icons ">remove_red_eye</i></a>
-
-                          <a class="btn-floating right waves-effect waves-light red  modal-trigger align-left" href="#"><i class="material-icons">delete</i></a>
-                        <div class="card-image">
-                          <img src="{% static 'images/logo-01.png' %}">
-                          <a class="btn-floating btn-large halfway-fab waves-effect waves-light #283593 indigo darken-3 modal-trigger" href="#"><i class="material-icons ">edit</i></a>
-
-                        </div>
-                        <div class="card-content">
-                          <span class="card-title">Miembro del Equipo</span>
-                          <p>Miembro: Diego Asencio</p>
-                        </div>
-                      </div>
+                    <div class="card-content">
+                      <span class="card-title">Miembro del Equipo</span>
+                      <p>Miembro: {{ solicitud.id }}</p>
                     </div>
-                    <div class="col s12 m6 l3">
-                      <div class="card hoverable">
-                          <a class="btn-floating btn-large halfway-fab waves-effect waves-light yellow indigo darken-3 modal-trigger" href="#"><i class="material-icons ">remove_red_eye</i></a>
+                  </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h3>No hay areas registradas</h3>
+        {% endif %}
 
-                          <a class="btn-floating right waves-effect waves-light red  modal-trigger align-left" href="#"><i class="material-icons">delete</i></a>
-                        <div class="card-image">
-                          <img src="{% static 'images/logo-01.png' %}">
-                          <a class="btn-floating btn-large halfway-fab waves-effect waves-light #283593 indigo darken-3 modal-trigger" href="#"><i class="material-icons ">edit</i></a>
 
-                        </div>
-                        <div class="card-content">
-                          <span class="card-title">Miembro del Equipo</span>
-                          <p>Miembro: Edwin Gonzales</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col s12 m6 l3">
-                      <div class="card hoverable">
-                          <a class="btn-floating btn-large halfway-fab waves-effect waves-light yellow indigo darken-3 modal-trigger" href="#"><i class="material-icons ">remove_red_eye</i></a>
 
-                          <a class="btn-floating right waves-effect waves-light red  modal-trigger align-left" href="#"><i class="material-icons">delete</i></a>
-                        <div class="card-image">
-                          <img src="{% static 'images/logo-01.png' %}">
-                          <a class="btn-floating btn-large halfway-fab waves-effect waves-light #283593 indigo darken-3 modal-trigger"  href="#"><i class="material-icons ">edit</i></a>
-
-                        </div>
-                        <div class="card-content">
-                          <span class="card-title">Miembro del Equipo</span>
-                          <p>Mike Olivera</p>
-                        </div>
-                      </div>
-                    </div>
 
 
 

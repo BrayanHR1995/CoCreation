@@ -38,3 +38,23 @@ class EmprendimientoForm(forms.ModelForm):
             'recibir',
             'aporte',
         ]
+class ProductoForm(forms.ModelForm):
+    class Meta:
+        model = PortafolioPS
+        fields = [
+            'nombre',
+            'descripcion',
+            'ruta_imagen',
+
+        ]
+
+class TareaForm(forms.ModelForm):
+    class Meta:
+        model = Tarea
+        fields = [
+            'nombre_tarea',
+            'descripcion',
+            'fechainicio',
+            'fechafin',
+
+        ]

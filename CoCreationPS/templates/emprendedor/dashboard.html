@@ -109,19 +109,33 @@
 		    	<div class="card-panel center white blue-text hoverable"><h5>Dashboard</h5></div>
 		 		<ul class="collection with-header hoverable">
 			        <li class="collection-header indigo darken-4 white-text"><h6>Portafolio de Productos</h6></li>
-			        <li class="collection-item"><div><a href="#!" ><img  class="responsive-img"  width="250" height="250" src="{% static 'images/logo.png' %}" href="#!"></a></div></li>
-			        <li class="collection-item"><div>Producto 2<a href="#!" class="secondary-content"></a></div></li>
-			        <li class="collection-item"><div>Producto 3<a href="#!" class="secondary-content"></a></div></li>
-			        <li class="collection-item"><div>Producto 4<a href="#!" class="secondary-content"></a></div></li>
-			        <p class="center"><a href="#">Ver todos Productos</a></p>
+					<tbody>
+						{% if productos_list %}
+							{% for solicitud in productos_list %}
+								{% if forloop.counter <= 8  %}
+									<li class="collection-item"><div>{{ solicitud.nombre }}<a href="#!" class="secondary-content"></a></div></li>
+								 {% endif %}
+							{% endfor %}
+						{% else %}
+							<h3>No hay Retos registrados</h3>
+						{% endif %}
+					</tbody>
+			        <p class="center"><a onClick="location.href='/account/emprendedor/productos'">Ver todos Productos</a></p>
       			</ul>
       			<ul class="collection with-header hoverable">
 			        <li class="collection-header indigo darken-4 white-text"><h6>Mi Equipo</h6></li>
-			        <li class="collection-item"><div><a href="#!" ><img  class="responsive-img"  width="250" height="250" src="{% static 'images/logo.png' %}" href="#!"></a></div></li>
-			        <li class="collection-item"><div>Miembro 2<a href="#!" class="secondary-content"></a></div></li>
-			        <li class="collection-item"><div>Miembro 2<a href="#!" class="secondary-content"></a></div></li>
-			        <li class="collection-item"><div>Miembro 3<a href="#!" class="secondary-content"></a></div></li>
-			        <p class="center"><a href="#">Ver todo el Equipo</a></p>
+			        <tbody>
+						{% if equipo_list %}
+							{% for solicitud in equipo_list %}
+								{% if forloop.counter <= 8  %}
+			        				<li class="collection-item"><div>{{ solicitud.id }}<a href="#!" class="secondary-content"></a></div></li>
+						        {% endif %}
+							{% endfor %}
+						{% else %}
+							<h3>No hay Retos registrados</h3>
+						{% endif %}
+					</tbody>
+			        <p class="center"><a onClick="location.href='/account/emprendedor/equipo'">Ver todo el Equipo</a></p>
       			</ul>
 
 
@@ -164,29 +178,24 @@
 		            <span class="card-title center #283593 indigo-text text-darken-3"><h6>Mis tareas</h6></span>
 		            <li class="divider"></li>
 		            <ul class="collection">
-		                <li class="collection-item avatar">
-		                  <img src=".{% static 'images/reto-01.png' %}" alt=""  class="circle " >
-		                  <span class="title">Nombre Completo</span>
-		                  <a href="#!" class="primary-content"><i class="">Hace 7 horas</i></a>
-		                </li>
-
-		                <li class="collection-item avatar">
-		                  <img src="{% static 'images/enviadoreto-01.png' %}" alt="" class="circle">
-		                  <span class="title">Nombre Completo</span>
-		                  <a href="#!" class="primary-content"><i class="">Hace 10 horas</i></a>
-		                </li>
-
-		                <li class="collection-item avatar">
-		                  <img src="{% static 'images/insignia1-01.png' %}" alt="" class="circle">
-		                  <span class="title">Nombre Completo</span>
-		                  <a href="#!" class="primary-content"><i class="">Hace 10 horas</i></a>
-		                </li>
-
-
-
+						<tbody>
+							{% if tarea_list %}
+								{% for solicitud in tarea_list %}
+									{% if forloop.counter <= 8  %}
+										<li class="collection-item avatar">
+										  <img src="{% static 'images/reto-01.png' %}" alt=""  class="circle " >
+										  <span class="title">{{ solicitud.nombre_tarea }}</span>
+										  <a href="#!" class="primary-content"><i class="">{{ solicitud.estado.nombre_estado }}</i></a>
+										</li>
+									 {% endif %}
+								{% endfor %}
+							{% else %}
+								<h3>No hay Retos registrados</h3>
+							{% endif %}
+						</tbody>
 		            </ul>
 
-		            <p class="center"><a href="http://cc.simultech.com.co/materialize/perfil/emprendedor/mis_tareas.html">Ver todas las tareas   </a></p>
+		            <p class="center"><a onClick="location.href='/account/emprendedor/mis_tareas'">Ver todas las tareas   </a></p>
 		        </div>
 		    </div>
 		</div>

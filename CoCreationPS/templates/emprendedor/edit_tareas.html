@@ -107,46 +107,79 @@
     <br></br>
 
       <div class="row">
+          <div class="row">
+                <div class="col s12 m12 l12">
 
-      {% if object_list %}
-        {% for solicitud in object_list %}
-            <div class="col s10  offset-s1">
-              <div class="col s12 m12">
-                <div class="card horizontal hoverable">
-                  <div class="card-image">
-                    <img src="{% static 'images/logos.png' %}">
+                  <div class="card-panel white hoverable">
+                  <div class="row">
+
+                      {% block content %}
+                        <form method="post">{% csrf_token %}
+                          <!-- Modal Agregar Area -->
+                          <div id="modal1" >
+                            <div>
+                              <h4 class="center">Editar Tarea</h4>
+
+                              <div class="row">
+                                <div class="col s12 m8 l8">
+
+                                    <div class="row center">
+                                        <div class="input-field col s10 offset-s1 offset-m4 offset-l4 ">
+                                          <input id="nombre_tarea" type="text" class="validate" name="nombre_tarea" value="{{ object.nombre_tarea }}">
+                                          <label class="active" for="nombre_tarea">Nombre del Producto</label>
+                                        </div>
+                                      </div>
+
+                                      <div class="row ">
+                                            <div class="col s12 ">
+                                              <div class="row ">
+                                                <div class="input-field col s10 offset-s1 offset-m4 offset-l4 ">
+                                                  <textarea id="descripcion" class="materialize-textarea" name="descripcion" >{{ object.descripcion }}</textarea>
+                                                  <label for="descripcion">Descripcion del Producto</label>
+                                                </div>
+                                              </div>
+                                            </div>
+                                      </div>
+
+
+                                      <div class="row ">
+                          		        <div class="input-field col s4 offset-s1 offset-m4 offset-l4">
+                                          <input id="fechainicio" type="text" class="validate" name="fechainicio" value="{{ object.fechainicio }}">
+                                          <label for="fechainicio">Fecha Inicio</label>
+                                        </div>
+                                        <div class="input-field col s4 ">
+                                          <input id="fechafin" type="text" class="validate" name="fechafin" value="{{ object.fechafin }}">
+                                          <label for="fechafin">Fecha Fin</label>
+                                        </div>
+                                      </div>
+
+                                    <div class="row center hide-on-med-and-down" >
+
+
+
+                              </div>
+
+
+                                </div>
+
+                              </div>
+
+
+
+                            </div>
+                            <div class=" center">
+                              <a onClick="location.href='/account/emprendedor/mis_tareas'" class="waves-effect waves-light btn #283593 indigo darken-3 ">Cancelar</a>
+                              <button type="submit" class="waves-effect waves-light btn #283593 indigo darken-3">Agregar</button>
+                            </div>
+                          </div>
+
+                        </form>
+                        {% endblock %}
+
                   </div>
-                  <div class="card-stacked">
-
-                    <div class="card-content">
-                        <h5><b>{{ solicitud.nombre }} </b></h5>
-                        <h6> {{ solicitud.descripcion }}</h6>
-
-                    </div>
-                    <div class=" right-align card-action blue-text text-darken-2">
-
-                      <a class="btn-floating waves-effect waves-light red  modal-trigger" onClick="location.href='/account/emprendedor/productos/del/{{solicitud.id}}'"><i class="material-icons">delete</i></a>
-                      <a class="btn-floating waves-effect waves-light #283593 indigo darken-3 modal-trigger" onClick="location.href='/account/emprendedor/productos/edit/{{solicitud.id}}'"><i class="material-icons ">edit</i></a>
-
-                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-        {% endfor %}
-    {% else %}
-        <h3>No hay areas registradas</h3>
-    {% endif %}
-
-      <div class="fixed-action-btn">
-        <a class="btn-floating btn-large red modal-trigger" onClick="location.href='/account/emprendedor/productos/add'">
-          <i class="large material-icons">add</i>
-        </a>
-        <ul>
-          <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-          <li><a class="btn-floating yellow darken-1"><i class="material-icons">help</i></a></li>
-        </ul>
-      </div>
 
 
       </div>
